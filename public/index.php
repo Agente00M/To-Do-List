@@ -1,8 +1,7 @@
 <?php
 require "../vendor/autoload.php";
-use Source\controller\ViewController;
-//require '../src/controller/ViewController.php';
-//echo $_SERVER['REQUEST_URI'];
+use Source\controller\ListaController;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,7 @@ use Source\controller\ViewController;
     
     <?php 
     
-        $view = new ViewController();
+        $view = new ListaController();
         try{
         $page = $view->findPage();
         require "../src/view/" . $page;

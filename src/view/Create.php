@@ -5,8 +5,10 @@ $bool = !isset($_POST['verificador']) ? false : true;
 if($bool){
     try{
       $controller = new ListaController;
+      $prioridade = filter_input(INPUT_POST,'prioridade',FILTER_SANITIZE_NUMBER_INT);
+      $descricao = filter_input(INPUT_POST,'description',FILTER_SANITIZE_SPECIAL_CHARS);
       $array = [
-        'priority' => $_POST['prioridade'],
+        'priority' => $prioridade,
         'task' => $_POST['description']];
       $controller->add($array);
       echo "<script>alert('Task cadastrada');</script>";  
@@ -32,7 +34,7 @@ if($bool){
 
 <form  method="POST">
     <input type="hidden" name="verificador" value="false">
-<label   style="margin-left:1rem" class="form-label">Prioridade</label>
+<label   style="margin-left:1rem" class="form-label ">Prioridade</label>
 <select name="prioridade" class="form-select" style="margin: 1rem;max-width:95%">
 
   <option selected value="1">Alta</option>
@@ -40,9 +42,9 @@ if($bool){
   <option value="3">Baixa</option>
 </select>
   <div class="mb-3">
-  <label   style="margin-left:1rem" class="form-label">Tarefa</label>
+  <label   style="margin-left:1rem" class="form-label ">Tarefa</label>
   <textarea name="description" style="margin: 1rem;max-width:95%" class="form-control" rows="3"></textarea>
 </div>
 
-<button type="submit" class="btn btn-primary" >Cadastrar</button>
+<button style="margin-left:1rem"type="submit" class="btn btn-primary" >Cadastrar</button>
 </form>

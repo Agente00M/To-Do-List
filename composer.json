@@ -1,0 +1,15 @@
+{
+    "name": "ryzen/to-do-list",
+    "autoload": {
+        "psr-4": {
+            "Source\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Moises",
+            "email": "moisessampaio19052005@hotmail.com"
+        }
+    ],
+    "require": {}
+}
