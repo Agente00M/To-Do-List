@@ -13,6 +13,7 @@ if($bool){
       $controller->add($array);
       echo "<script>alert('Task cadastrada');</script>";  
     }catch(Exception $e){
+        
         $e->getMessage();
     }
     

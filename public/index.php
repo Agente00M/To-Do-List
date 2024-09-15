@@ -1,6 +1,9 @@
 <?php
 require "../vendor/autoload.php";
+use Dotenv\Dotenv;
 use Source\controller\ListaController;
+$dotenv = Dotenv::createImmutable(dirname(__DIR__,1));
+$dotenv->load();
 
 ?>
 <!DOCTYPE html>
